@@ -1,6 +1,7 @@
 spring:
   #Activiti property configuration
   activiti:
+    #表示启动时检查数据库表，不存在则创建
     database-schema-update: true
     #记录历史等级 可配置的历史级别有none, activity, audit, full
     history-level: full
@@ -30,3 +31,9 @@ spring:
       connection-timeout: 30000
       # 测试连接的有效性
       connection-test-query: SELECT 1
+
+# project manifest path
+project:
+  manifest:
+    file:
+      path: classpath:/default-project.json

@@ -21,7 +21,7 @@
         <java.version>8</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <activiti-dependencies.version>7.1.24</activiti-dependencies.version>
+        <activiti-dependencies.version>7.1.0.M6</activiti-dependencies.version>
     </properties>
 
     <dependencyManagement>
@@ -42,10 +42,13 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.activiti</groupId>
             <artifactId>activiti-spring-boot-starter</artifactId>
         </dependency>
-
         <!--  mysql数据库 + HikariCP 连接池 start -->
         <dependency>
             <groupId>com.zaxxer</groupId>
@@ -102,15 +105,4 @@
         </plugins>
     </build>
 
-    <!-- 添加私服仓库地址，否则找不到包 -->
-    <repositories>
-        <repository>
-            <id>alfresco</id>
-            <name>Activiti Releases</name>
-            <url>https://artifacts.alfresco.com/nexus/content/repositories/activiti-releases/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </repository>
-    </repositories>
 </project>
